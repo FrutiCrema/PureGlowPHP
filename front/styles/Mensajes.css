@@ -1,0 +1,628 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Protest+Riot&display=swap');
+/* Color Variables */
+:root {
+  --white: #fff;
+  --black: #222;
+  --blue: #006269;
+  --grey1: #f0f0f0;
+  --grey2: #e9d7d3;
+  --blue2:  #00559b6b;
+  --blue3:  #0039686b;
+}
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  
+}
+
+
+/* 
+=================
+Header
+=================
+*/
+
+.header {
+    position: relative;
+    /* min-height:30vh; */
+    overflow-x: hidden;
+    
+  }
+  
+  .top-nav {
+    background-color: var(--blue);
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+  }
+  
+  .top-nav div {
+    justify-content: right;
+    height: 4.0rem;
+  }
+  
+  .top-nav a {
+    color: var(--white);
+    padding: 0 0.5rem;
+  }
+  .top-nav a:hover {
+    text-decoration: underline;
+  }
+  ul.d-flex li {
+     margin-left: 20px;/* Ajusta el valor según sea necesario */
+  }
+
+
+
+    /* 
+=================
+Navigation
+=================
+*/
+.navigation {
+    height: 6rem;
+    line-height: 6rem;
+  }
+  
+  .nav-center {
+    justify-content: space-between;
+  }
+  
+  .nav-list .icons {
+    display: none;
+  }
+  
+  .nav-center .nav-item:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+  
+  .nav-center .nav-link {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+  
+  .nav-center .nav-link:hover {
+    color: var(--blue);
+  }
+  
+  .nav-center .hamburger {
+    display: none;
+    font-size: 2.3rem;
+    color: var(--black);
+    cursor: pointer;
+  }
+
+    /* Icons */
+
+    .icon {
+        cursor: pointer;
+        font-size: 2.5rem;
+        padding: 0 1rem;
+        color: #555;
+        position: relative;
+      }
+      
+      .icon:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+      
+      .icon span {
+        position: absolute;
+        top: 3px;
+        right: -3px;
+        background-color: var(--blue);
+        color: var(--white);
+        border-radius: 50%;
+        font-size: 1.3rem;
+        height: 2rem;
+        width: 2rem;
+        justify-content: center;
+      }
+      
+      @media only screen and (max-width: 768px) {
+        .nav-list {
+          position: fixed;
+          top: 12%;
+          left: -35rem;
+          flex-direction: column;
+          align-items: flex-start;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+          background-color: white;
+          height: 100%;
+          width: 0%;
+          max-width: 35rem;
+          z-index: 100;
+          transition: all 300ms ease-in-out;
+        }
+      
+        .nav-list.open {
+          left: 0;
+          width: 100%;
+        }
+      
+        .nav-list .nav-item {
+          margin: 0 0 1rem 0;
+          width: 100%;
+        }
+      
+        .nav-list .nav-link {
+          font-size: 2rem;
+          color: var(--black);
+        }
+      
+        .nav-center .hamburger {
+          display: block;
+          color: var(--black);
+          font-size: 3rem;
+        }
+      
+        .icons {
+          display: none;
+        }
+      
+        .nav-list .icons {
+          display: flex;
+        }
+      
+        /*.top-nav ul {
+            display: none; 
+        }*/
+      
+        .top-nav div {
+          /* justify-content: center; */
+          height:  4.0rem;
+        }
+      }
+
+      
+      /* Buscador */
+.search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+  
+  .search-box button {
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .search-box button:hover {
+    background-color: var(--blue2);
+  }
+  
+    /* 
+=================
+Navigation NombreLogo
+=================
+*/
+.logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container img {
+    width: 50px; /* ajusta el tamaño de la imagen */
+    height: 50px; /* ajusta el tamaño de la imagen */
+    /*border-radius: 50%;  para hacer un círculo */
+    margin-right: 0px; /* ajusta el espacio entre la imagen y el texto */
+  }
+  
+  .logo-container h1 {
+    font-size: 30px;
+    color: #333;
+    font-family: 'Dancing Script', cursive;
+    text-decoration: underline; /* Subraya el texto */
+  }
+  
+  .logo-container .glow {
+    color: var(--blue);
+    font-weight: bold;
+    
+  }
+  
+  .logo {
+    text-decoration: none;
+  }
+
+
+
+/* Footer */
+.footer {
+    position: fixed; /* Mantener fijo en la parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5rem 1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    z-index: 999; /* Asegura que el footer esté por debajo del menú */
+  }
+  
+    footer .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 99.6rem;
+      margin: 0 auto;
+    }
+    
+    .footer .col {
+      flex-direction: column;
+      color: var(--white);
+      align-items: flex-start;
+    }
+    
+    .footer .col:last-child {
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .footer .col:last-child span {
+      font-size: 2.5rem;
+      margin-right: 0.5rem;
+    }
+    
+    .footer .col a {
+      color: var(--white);
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      font-weight: 300;
+    }
+    
+    .footer .col h4 {
+      margin-bottom: 1rem;
+    }
+    
+    @media only screen and (max-width: 567px) {
+      footer .row {
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+      }
+    }
+  
+
+
+
+    /* Menú y contenido */
+/* Estilos para pantallas más grandes */
+.menu {
+    background-color: var(--blue);
+    color: #ffeeee;
+    width: 20%; /* Ancho original del menú */
+    float: left;
+    box-sizing: border-box;
+    padding-top: 20px;
+    font-size: 1.4rem;
+    margin-bottom: 5rem;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu li:hover {
+    background-color: var(--blue3);
+    cursor: pointer;
+  }
+  
+  .menu li a {
+    color: #ffffff; /* Color blanco */
+    text-decoration: none; /* Quita el subrayado del enlace */
+  }
+  
+  /* Estilos para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .menu {
+      width: 100%; /* Cambiamos el ancho del menú al 100% en pantallas más pequeñas */
+      padding-top: 0; /* Eliminamos el relleno superior */
+      margin-bottom: 0; /* Eliminamos el margen inferior */
+    }
+  
+    .content {
+      width: 100%; /* Cambiamos el ancho del contenido al 100% en pantallas más pequeñas */
+      float: none; /* Quitamos el float para que el contenido se muestre debajo del menú */
+      height: auto; /* Altura automática */
+      padding: 20px 0; /* Ajustamos el relleno solo en la parte superior e inferior */
+    }
+  }
+  
+  
+  /*Configuracion*/
+  #configuracion {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 5px;
+    padding: 20px; /* Agregado para dar espacio al contenido */
+    background-color: #f9f9f9; /* Color de fondo */
+  }
+  
+  #configuracion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Color del texto */
+  }
+  
+  #formConfiguracion label {
+    display: block;
+    margin-bottom: 10px; /* Aumentado el espacio entre etiquetas */
+    color: #555; /* Color del texto */
+  }
+  
+  #formConfiguracion input[type="text"],
+  #formConfiguracion input[type="email"],
+  #formConfiguracion input[type="password"],
+  #formConfiguracion select,
+  #formConfiguracion input[type="date"] {
+    width: 100%;
+    padding: 12px; /* Aumentado el espacio interior */
+    margin-bottom: 20px; /* Aumentado el espacio inferior */
+    border: 1px solid #ddd; /* Borde más claro */
+    border-radius: 5px;
+    background-color: #f5f5f5; /* Color de fondo */
+    color: #555; /* Color del texto */
+  }
+  
+  #formConfiguracion button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  #formConfiguracion button:hover {
+    background-color: var(--blue3);
+  }
+  
+  #formConfiguracion img {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* Media queries para hacerlo responsive */
+  @media screen and (max-width: 600px) {
+    #configuracion {
+      padding: 15px; /* Reducir el espacio interior en pantallas pequeñas */
+    }
+  
+    #formConfiguracion input[type="text"],
+    #formConfiguracion input[type="email"],
+    #formConfiguracion input[type="password"],
+    #formConfiguracion select,
+    #formConfiguracion input[type="date"] {
+      padding: 10px; /* Reducir el espacio interior en pantallas pequeñas */
+      margin-bottom: 15px; /* Reducir el espacio inferior en pantallas pequeñas */
+    }
+  }
+  
+
+
+
+
+
+#chat-container h3{
+margin-bottom: 15px;
+}
+
+#mensajes-titulo {
+    margin-bottom: 7px; /* Puedes ajustar el valor del margen según sea necesario */
+    font-size: 40px;
+  }
+  
+  /* Estilos para la sección de mensajes */
+  #chat-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .chat-container {
+    flex-grow: 1;
+  }
+  
+  .message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  .bot-message {
+    background-color: var(--blue);
+    color: #fff;
+  }
+  
+  .input-container {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .input-container input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .input-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  #product-info {
+    flex-basis: 30%;
+  }
+  
+  #product-info img {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  #accept-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+/* Estilos generales para el botón */
+.button {
+  padding: 10px 20px; /* Padding interno */
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  margin-right: 10px; /* Margen derecho */
+}
+
+/* Estilos para el botón habilitado */
+.button-enabled {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+/* Estilos para el botón deshabilitado */
+.button-disabled {
+  background-color: #ccc; /* Color de fondo gris */
+  color: #666; /* Color de texto gris oscuro */
+  cursor: not-allowed; /* Cambiar cursor a "no permitido" */
+}
+
+.button-dis {
+  background-color: #ccc; /* Color de fondo gris */
+  color: #666; /* Color de texto gris oscuro */
+  cursor: not-allowed; /* Cambiar cursor a "no permitido" */
+}
+
+
+  .chats-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .chats-list li {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer; /* Añadir cursor: pointer aquí */
+    
+  }
+  
+  .chats-list li:last-child {
+    border-bottom: none; /* Elimina el borde inferior del último elemento */
+  }
+  
+  .chats-list li:hover {
+    background-color: #f5f5f5; /* Cambia el color de fondo al pasar el ratón sobre el elemento */
+  }
+  
+  .chats-list strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .chats-list span {
+    color: #999;
+  }
+
+  .mensaje-enviado {
+    background-color: var(--blue2); /* Color de fondo llamativo para mensajes enviados por el usuario actual */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px; /* Borde redondeado */
+}
+
+.mensaje-recibido {
+    background-color: var(--blue); /* Color de fondo llamativo para mensajes recibidos de otros usuarios */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px; /* Borde redondeado */
+    color:#f0f0f0;
+}
